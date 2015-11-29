@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Area of circle</title>
+        <link rel="stylesheet" href="CSS/reset.css">
+        <link rel="stylesheet" href="CSS/main.css">
+        <script type="text/javascript">
+            function circleArea(r) {
+                return Math.round(100 * (Math.PI) * r * r )/100;
+            }
+            function displayArea() {
+                din = document.getElementById("question"); dout = document.getElementById("answer"); dout.value = circleArea(din.value);
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h1>Area of a circle</h1>
+                <hr>
+            </div>
+            <div id="content">
+                <form name="myForm" id="myForm" action="#">
+                    <label>Enter Radius...</label>
+                    <input id="question" name="question" type="text">
+                    <br>
+                    <label>The answer is</label>
+                    <input name="answer" id="answer" type="text" readonly="readonly">
+                    <br>
+                    <input class="button" name="calculate" type="button" value="Calculate" onclick="displayArea()"><br>
+                </form>
+            </div>
+            <div id="footer">
+                <nav id="navbox">
+                    <a href="index.html">Home</a> | 
+                    <a href="multiply.html">Multiplication Buddy</a> | 
+                    <a href="temp.html">Temperature Conversion</a> | 
+                    <a href="circle.html">Circle Area</a>
+                </nav><br>
+                <p>&copy; Eddie Tindame</p>
+            </div>
+        </div>
+
+    </body>
+
+</html>

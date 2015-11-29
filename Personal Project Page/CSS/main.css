@@ -1,0 +1,228 @@
+/*
+========================================
+Grid/Layout
+========================================
+*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    min-width: 700px;
+    max-width: 700px;
+    background: rgba(248, 248, 248, .9); /*transparency set */
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: #575757;
+}
+html {
+    background: url(../Images/Background_2880x1800.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+#header {
+    padding: 10px;
+    background: auto;
+    text-align: center;
+}
+#content {
+    padding: 10px;
+    padding-bottom: 80px;
+    /* Height of the footer element */
+}
+.clearfix {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+#indexblock {
+    width: 400px;
+}
+#section_1, 
+#section_2, 
+#section_3, 
+#section_4, 
+#section_5 {
+    height: 175px;
+    width: 100%;
+    margin-bottom: 7px;
+}
+#footer {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: auto;
+    text-align: center;
+}
+.textbox_l,
+.imagebox_l {
+    display: inline-block;
+    float: left;
+    border-radius: 5px;
+    padding: auto;
+}
+.textbox_r,
+.imagebox_r {
+    display: inline-block;
+    float: right;
+    border-radius: 5px;
+    padding: auto;
+}
+.textbox_r,
+.textbox_l {
+    width: 73%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
+.imagebox_r,
+.imagebox_l {
+    width: 25%;
+    height: 100%;
+    background: #404040;
+    position: relative;
+}
+/*
+========================================
+Images
+========================================
+*/
+img {
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.albumart,
+.movieposter,
+.bookcover
+{
+    margin-top: 2.5%;
+}
+.albumart {
+    width:95%;
+    height:95%;
+}
+.movieposter,
+.bookcover {
+    width: 75%;
+    height: 95%;
+}
+#portrait {
+    height: auto;
+    width: 300px;
+}
+/*
+========================================
+Buttons
+========================================
+*/
+
+.btn {
+    height: auto;
+    width: 175px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 5px solid #575757;
+    padding: 30px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin: 5px;
+    text-align: center;
+    font-size: 13pt;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, .3);
+}
+.btn:hover {
+    background-color: #fff;
+}
+#books,
+#music {
+    float: left;
+}
+#films,
+#interests {
+    float: right;
+}
+/*
+========================================
+Typography
+========================================
+*/
+strong {
+    font-weight: 600;
+}
+cite, em, i {
+    font-style: italic;
+}
+h1 {
+    font-size: 16px;
+}
+h1, p {
+    margin-bottom: 7px;
+}
+p {
+    font-size: 13px;
+}
+a {
+    color: #648880;
+    text-decoration: none;
+}
+a:hover {
+    color: #a9b2b9;
+}
+h1, p, nav, .btn {
+    font-family: monospace;
+}
+.pagetitle {
+    text-align: center ;
+    font-size: 30px;
+}
+.clearfix {
+    text-align: justify;
+}
+#welcome {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: justify;
+    background: #fff;
+    font-size: 15px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, .3);
+}
+#dark {
+    background-color: #404040;
+    width: 100%;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}

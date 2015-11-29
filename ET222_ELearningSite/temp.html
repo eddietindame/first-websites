@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Conversion</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <script type="text/javascript">
+        function CtoF(r) {
+            return Math.round(100 * 9.0 / 5.0 * r + 32) / 100;
+        }
+
+        function displayTempF() {
+            din = document.getElementById("question");
+            dout = document.getElementById("answer");
+            dout.value = CtoF(din.value);
+        }
+
+        function FtoC(r) {
+            return Math.round(100 * 5.0 / 9.0 * (r - 32)) / 100;
+        }
+
+        function displayTempC() {
+            din = document.getElementById("question");
+            dout = document.getElementById("answer");
+            dout.value = FtoC(din.value);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>Temperature Conversion</h1>
+            <hr>
+        </div>
+        <div id="content">
+            <form name="myForm" id="myForm" action="#">
+                <label>Enter Temperature...</label>
+                <input id="question" name="question" type="text">
+                <br>
+                <label>The answer is</label>
+                <input name="answer" id="answer" type="text" readonly="readonly">
+                <br>
+                <div id="clearfix">
+                    <input class="inlinebutton" name="CtoF" type="button" value="C to F" onclick="displayTempF()">
+                    <input class="inlinebutton" name="FtoC" type="button" value="F to C" onclick="displayTempC()">
+                    <br>
+                </div>
+            </form>
+        </div>
+        <div id="footer">
+            <nav id="navbox">
+                <a href="index.html">Home</a> |
+                <a href="multiply.html">Multiplication Buddy</a> |
+                <a href="temp.html">Temperature Conversion</a> |
+                <a href="circle.html">Circle Area</a>
+            </nav>
+            <br>
+            <p>&copy; Eddie Tindame</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

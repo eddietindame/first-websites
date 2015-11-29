@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <title>Multiplication Buddy</title>
+    <script type="text/javascript">
+        var x, y, z; //declare global variables (random placeholders)
+        var s = 0;   //streak placeholder initialised
+        
+        //function below generates a random integer between the
+        //min and max parameters set in the arguments
+        function aNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + 1);
+        }
+
+        //this function updates the comment field with
+        //a new comment depending on the streak of the user
+        function updateComment() {
+            if (s == 0)
+                dcomment.value = "Pathetic.";
+            else if (s == 3)
+                dcomment.value = "Three piece combo.";
+            else if (s == 4)
+                dcomment.value = "You're getting there...";
+            else if (s >= 5 && s < 10)
+                dcomment.value = "Nice.";
+            else if (s >= 10 && s < 15)
+                dcomment.value = "Superb.";
+            else if (s >= 15 && s < 20)
+                dcomment.value = "Dayum!";
+            else if (s >= 20 && s < 21)
+                dcomment.value = "You've had enough, go home...";
+            else if (s == 21)
+                dcomment.value = "ULTRAAAA";
+            else if (s == 22)
+                dcomment.value = "OOOH! OOOOOOOOOHH!";
+            else if (s == 23)
+                dcomment.value = "THAT AIN'T FALCO!!!111";
+            else if (s == 24)
+                dcomment.value = "WOMBO COMBO!!!!!11one";
+            else if (s >= 25 && s < 30)
+                dcomment.value = "NO LIFE ┌( ಠ_ಠ)┘";
+            else if (s >= 30)
+                dcomment.value = "•*'¨¯¨'*~-(_GOD-LIKE_)-~*'¨¯¨'*•";
+        }
+
+        //function below assigns random numbers to global variables
+        //and then generates the text field of question box. it also
+        //sets the streak count box at 0 and updates the comment box
+        function genQuestion() {
+            x = aNumber(1, 12); //random number
+            y = aNumber(1, 12); //between 1 and 12
+            z = aNumber(1, 3);  //between 1 and 3
+            dstreak = document.getElementById("streak")
+            dstreak.value = s;
+            dout = document.getElementById("question");
+            dcomment = document.getElementById("comment");
+            updateComment();
+            if (z == 1) //if statements randomly cycle through different
+                dout.value = x + " times " + y + " ?"; //ways of wording
+            else if (z == 2)                           //the question
+                dout.value = x + " multiplied by " + y + " ?";
+            else if (z == 3)
+                dout.value = "the product of " + x + " and " + y + " ?";
+        }
+
+        //when the button is pressed this function compares the product 
+        //of the two randomly generated integers to the inputted answer.
+        //different comments are randomly outputted to the user for each
+        //right or wrong answer through window alerts.
+        function buttonPressed() {
+            var product = x * y;
+            din = document.getElementById("answer");
+
+            z = aNumber(1, 4); //random number between 1 and 4
+
+            if (din.value == product) 
+            { //if answer is correct...
+                if (z == 1)
+                    window.alert("Very good!");
+                else if (z == 2)
+                    window.alert("Excellent!");
+                else if (z == 3)
+                    window.alert("Correct - Nice work!");
+                else if (z == 4)
+                    window.alert("Correct – keep up the good work!");
+
+                s++; //increments streak counter
+                dstreak.value = s;
+
+                genQuestion();  //generates new question
+                din.value = ""; //resets the answer field
+            }
+            //if user accidently inputs a blank, they does not lose their streak
+            else if (din.value == "" || din.value == " " || din.value == "  ")
+                window.alert("Please input an answer.");
+            else 
+            { //if answer is incorrect...
+                if (z == 1)
+                    window.alert("No. Please try again.");
+                else if (z == 2)
+                    window.alert("Wrong. Try once more.");
+                else if (z == 3)
+                    window.alert("Incorrect – Don’t give up.");
+                else if (z == 4)
+                    window.alert("No – keep trying.");
+
+                s = 0; //resets streak counter
+                dstreak.value = s;
+                updateComment();
+            }
+        }
+    </script>
+</head>
+
+<body onload="genQuestion()">
+    <div id="wrapper">
+        <div id="header">
+            <h1>Practice your multiples!</h1>
+            <hr>
+        </div>
+
+        <div id="content">
+            <form name="myForm" id="myForm" action="#">
+                <label>What is...</label>
+                <br>
+                <input name="question" id="question" type="text" readonly="readonly">
+                <br>
+                <label>The answer is</label>
+                <br>
+                <input id="answer" name="answer" type="text">
+                <br>
+                <input id="btn" class="button" name="Check" type="button" value="Check my answer" onclick="buttonPressed()">
+                <div id="clearfix">
+                    <label id="streaklabel">Your winning streak is</label>
+                    <input id="streak" name="streak" type="text" readonly="readonly">
+                    <input id="comment" name="comment" type="text" readonly="readonly">
+                    <br>
+                </div>
+            </form>
+        </div>
+
+        <div id="footer">
+            <nav id="navbox">
+                <a href="index.html">Home</a> |
+                <a href="multiply.html">Multiplication Buddy</a> |
+                <a href="temp.html">Temperature Conversion</a> |
+                <a href="circle.html">Circle Area</a>
+            </nav>
+            <br>
+            <p>&copy; Eddie Tindame</p>
+        </div>
+    </div>
+</body>
+
+</html>
